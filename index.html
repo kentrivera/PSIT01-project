@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glassmorphism Top Nav</title>
+    <title>Kclicks</title>
     <link rel="stylesheet" href="styles.css">
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -17,12 +17,7 @@
                 <h1>Kclicks</h1>
             </div>
 
-            <!-- Hamburger Menu for Mobile -->
-            <div class="hamburger" onclick="toggleMenu()">
-                <i class="fas fa-bars"></i>
-            </div>
-
-            <!-- Search Bar and Navigation Links -->
+            <!-- Search Bar and Navigation Links (Visible on Wide Screens) -->
             <div class="nav-right">
                 <!-- Search Bar -->
                 <div class="search-bar">
@@ -31,21 +26,50 @@
                 </div>
 
                 <!-- Navigation Links -->
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Contact</a></li>
+                <ul class="nav-links">
+                    <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#"><i class="fas fa-info-circle"></i> About</a></li>
+                    <li><a href="#"><i class="fas fa-camera"></i> Services</a></li>
+                    <li><a href="#"><i class="fas fa-envelope"></i> Contact</a></li>
                 </ul>
+            </div>
+
+            <!-- Hamburger Menu for Mobile (Visible on Mobile Screens) -->
+            <div class="hamburger" onclick="toggleAside()">
+                <i class="fas fa-bars"></i>
             </div>
         </div>
     </nav>
 
-    <!-- JavaScript for Hamburger Menu -->
+    <!-- Aside Panel for Mobile -->
+    <aside class="aside-panel" id="asidePanel">
+        <div class="aside-content">
+            <!-- Close Button -->
+            <div class="close-btn" onclick="toggleAside()">
+                <i class="fas fa-times"></i>
+            </div>
+
+            <!-- Search Bar in Aside -->
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+                <button type="submit">🔍</button>
+            </div>
+
+            <!-- Navigation Links in Aside -->
+            <ul class="nav-links">
+                <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#"><i class="fas fa-info-circle"></i> About</a></li>
+                <li><a href="#"><i class="fas fa-camera"></i> Services</a></li>
+                <li><a href="#"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </div>
+    </aside>
+
+    <!-- JavaScript for Toggle Aside -->
     <script>
-        function toggleMenu() {
-            const navLinks = document.getElementById("navLinks");
-            navLinks.classList.toggle("active");
+        function toggleAside() {
+            const asidePanel = document.getElementById("asidePanel");
+            asidePanel.classList.toggle("active");
         }
     </script>
 </body>
