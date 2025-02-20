@@ -1,36 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
-    <title>Clicks</title
-      
-  </head>
-  <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glassmorphism Top Nav</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
     <nav class="glass-nav">
-      <div class="nav-content">
-        <!-- Kclicks Logo with Camera Icon -->
-        <div class="logo-container">
-          <i class="fas fa-camera logo-icon"></i>
-          <!-- Camera Icon -->
-          <h1>Kclicks</h1>
-        </div>
+        <div class="nav-content">
+            <!-- Kclicks Logo with Camera Icon -->
+            <div class="logo-container">
+                <i class="fas fa-camera logo-icon"></i>
+                <h1>Kclicks</h1>
+            </div>
 
-        <!-- Search Bar -->
-        <div class="search-bar">
-          <input type="text" placeholder="Search..." />
-          <button type="submit">🔍</button>
-        </div>
+            <!-- Hamburger Menu for Mobile -->
+            <div class="hamburger" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
 
-        <!-- Navigation Links -->
-        <ul class="nav-links">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </div>
+            <!-- Search Bar and Navigation Links -->
+            <div class="nav-right">
+                <!-- Search Bar -->
+                <div class="search-bar">
+                    <input type="text" placeholder="Search...">
+                    <button type="submit">🔍</button>
+                </div>
+
+                <!-- Navigation Links -->
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
     </nav>
-  </body>
+
+    <!-- JavaScript for Hamburger Menu -->
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById("navLinks");
+            navLinks.classList.toggle("active");
+        }
+    </script>
+</body>
 </html>
